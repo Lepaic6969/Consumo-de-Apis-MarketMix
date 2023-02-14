@@ -18,6 +18,12 @@ createApp({
     }
   },
   methods:{
+    showUsers(){
+      console.log("NombreUsuario - Password - Nombre ")
+      console.log(this.data[0].login.username,this.data[0].login.password,this.data[0].name.first)
+      console.log(this.data[1].login.username,this.data[1].login.password,this.data[1].name.first)
+      console.log(this.data[2].login.username,this.data[2].login.password,this.data[2].name.first)
+    },
     login(){
       
       const user=this.data.find(user=>user.login.username===this.username && user.login.password===this.password)
@@ -50,6 +56,7 @@ createApp({
         const {results}=await data.json()
         this.data=results
         localStorage.setItem("users",JSON.stringify(this.data))
+        this.showUsers()
     },
     async getCountries(){
       this.countries=await fetch('https://restcountries.com/v3.1/all').then(data=>data.json())
@@ -129,14 +136,13 @@ createApp({
     //Para que el usuario no deba estarse logeando.
     if(localStorage.getItem("successfullLogin")!==null){
       this.successfullLogin=true
+    }else{
+      this.successfullLogin=false
     }
-    //Saco por consola algunos usuarios para poderme logear
-    console.log("NombreUsuario - Password - Nombre ")
-    console.log(this.data[0].login.username,this.data[0].login.password,this.data[0].name.first)
-    console.log(this.data[1].login.username,this.data[1].login.password,this.data[1].name.first)
-    console.log(this.data[2].login.username,this.data[2].login.password,this.data[2].name.first)
     
+
   }
+
 
 
 }).mount('#app')
