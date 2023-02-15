@@ -23,6 +23,7 @@ createApp({
       console.log(this.data[0].login.username,this.data[0].login.password,this.data[0].name.first)
       console.log(this.data[1].login.username,this.data[1].login.password,this.data[1].name.first)
       console.log(this.data[2].login.username,this.data[2].login.password,this.data[2].name.first)
+      alert(`Para los datos de ingreso mire la consola o entre con este usuario:${this.data[0].login.username} y a esta contraseña:${this.data[0].login.password}`)
     },
     login(){
       

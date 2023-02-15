@@ -21,7 +21,7 @@
 }
 @media(max-width:400px){
     .w-25-responsive{
-        width: 80% !important;
+        width: 100% !important;
     }
     .font-size-responsive{
         font-size: 0.75rem !important;
