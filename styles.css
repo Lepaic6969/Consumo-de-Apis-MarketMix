@@ -1,0 +1,29 @@
+.w-50-responsive{
+    width: 50% !important;
+}
+.w-75-responsive{
+    width: 75% !important;
+}
+.w-25-responsive{
+    width: 25% !important;
+}
+
+@media(max-width:700px){
+    .w-50-responsive{
+        width: 90% !important;
+    }
+    .w-75-responsive{
+        width: 90% !important;
+    }
+    .w-25-responsive{
+        width: 50% !important;
+    }
+}
+@media(max-width:400px){
+    .w-25-responsive{
+        width: 80% !important;
+    }
+    .font-size-responsive{
+        font-size: 0.75rem !important;
+    }
+}

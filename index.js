@@ -124,6 +124,7 @@ createApp({
   
     if(JSON.parse(localStorage.getItem("users"))){
       this.data=JSON.parse(localStorage.getItem("users"))
+      this.showUsers()
     }else{
       this.getUsers()
     }
