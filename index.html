@@ -13,8 +13,8 @@
 </head>
 <body>
     <div id="app">
-      <div class="mt-5 container w-75 " v-if="successfullLogin">
-        <form class="w-75-responsive border p-3 rounded" @submit.prevent=" filterBoth" >
+      <div class="mt-5  w-75 " v-if="successfullLogin">
+        <form class="w-75-responsive border p-3 rounded mb-3 ms-5" @submit.prevent=" filterBoth" >
           <div class="mb-3">
             <label for="filter" class="form-label fw-bold">Filtro:</label>
             <select class="form-select "  id="filtro" v-model="filter">
@@ -50,7 +50,7 @@
           </div>
         </form>
 
-        <table class="table font-size-responsive">
+        <table class="table font-size-responsive container-fluid ms-lg-5">
           <thead>
             <tr>
               <th scope="col">Foto</th>

@@ -18,12 +18,13 @@ createApp({
     }
   },
   methods:{
+    
     showUsers(){
       console.log("NombreUsuario - Password - Nombre ")
       console.log(this.data[0].login.username,this.data[0].login.password,this.data[0].name.first)
       console.log(this.data[1].login.username,this.data[1].login.password,this.data[1].name.first)
       console.log(this.data[2].login.username,this.data[2].login.password,this.data[2].name.first)
-      alert(`Para los datos de ingreso mire la consola o entre con este usuario:${this.data[0].login.username} y a esta contraseña:${this.data[0].login.password}`)
+      
     },
     login(){
       
@@ -58,6 +59,7 @@ createApp({
         this.data=results
         localStorage.setItem("users",JSON.stringify(this.data))
         this.showUsers()
+        alert(`Para los datos de ingreso mire la consola o entre con este usuario:${this.data[0].login.username} y a esta contraseña:${this.data[0].login.password}`)
     },
     async getCountries(){
       this.countries=await fetch('https://restcountries.com/v3.1/all').then(data=>data.json())
@@ -140,6 +142,9 @@ createApp({
       this.successfullLogin=true
     }else{
       this.successfullLogin=false
+    }
+    if(this.data.length>0 && !this.successfullLogin){
+      alert(`Para los datos de ingreso mire la consola o entre con este usuario:${this.data[0].login.username} y a esta contraseña:${this.data[0].login.password}`)
     }
     
 
